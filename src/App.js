@@ -32,8 +32,8 @@ const options = {
   zoomControl: true,
 };
 const center = {
-  lat: 43.6532,
-  lng: -79.3832,
+  lat: -21.7642,
+  lng: -43.3496,
 };
 
 export default function App() {
@@ -65,15 +65,15 @@ export default function App() {
     mapRef.current.setZoom(14);
   }, []);
 
-  if (loadError) return "Error";
-  if (!isLoaded) return "Loading...";
+  if (loadError) return "Erro";
+  if (!isLoaded) return "Carregando...";
 
   return (
     <div>
       <h1>
-        Bears{" "}
-        <span role="img" aria-label="tent">
-          ⛺️
+        Apoiar Saúde {" "}
+        <span role="img" aria-label="diamante">
+        💠
         </span>
       </h1>
 
@@ -97,7 +97,7 @@ export default function App() {
               setSelected(marker);
             }}
             icon={{
-              url: `/bear.svg`,
+              url: `/favicon.ico`,
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15),
               scaledSize: new window.google.maps.Size(30, 30),
@@ -115,11 +115,11 @@ export default function App() {
             <div>
               <h2>
                 <span role="img" aria-label="bear">
-                  🐻
+                💠
                 </span>{" "}
-                Alert
+                 Alerta
               </h2>
-              <p>Spotted {formatRelative(selected.time, new Date())}</p>
+              <p>Serviço Cadastrado {formatRelative(selected.time, new Date())}</p>
             </div>
           </InfoWindow>
         ) : null}
@@ -178,7 +178,7 @@ function Search({ panTo }) {
       const { lat, lng } = await getLatLng(results[0]);
       panTo({ lat, lng });
     } catch (error) {
-      console.log("😱 Error: ", error);
+      console.log("😱 Erro : ", error);
     }
   };
 
@@ -189,7 +189,7 @@ function Search({ panTo }) {
           value={value}
           onChange={handleInput}
           disabled={!ready}
-          placeholder="Search your location"
+          placeholder="Digite seu endereço completo"
         />
         <ComboboxPopover>
           <ComboboxList>
