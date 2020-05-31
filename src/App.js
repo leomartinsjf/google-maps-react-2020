@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import {
   GoogleMap,
   useLoadScript,
@@ -20,6 +20,7 @@ import { formatRelative } from "date-fns";
 
 import "@reach/combobox/styles.css";
 import mapStyles from "./mapStyles";
+
 
 const libraries = ["places"];
 const mapContainerStyle = {
